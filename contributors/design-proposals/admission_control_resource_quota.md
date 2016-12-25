@@ -111,7 +111,7 @@ actual usage, where request < actual < limit, is considered highly volatile.
 
 As a consequence of this decision, the user is able to spread its usage of a
 resource across multiple tiers of service.  Let's demonstrate this via an
-example with a 4 cpu quota.
+example with a 4 cpu quotas.
 
 The quota may be allocated as follows:
 
