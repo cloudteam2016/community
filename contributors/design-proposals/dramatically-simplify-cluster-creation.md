@@ -27,7 +27,7 @@ We plan to do so by improving and simplifying Kubernetes itself, rather than bui
 
 ## Scope of project
 
-There are logically 3 steps to deploying a Kubernetes cluster:
+There are logically 3 steps to deploy a Kubernetes cluster:
 
 1. *Provisioning*: Getting some servers - these may be VMs on a developer's workstation, VMs in public clouds, or bare-metal servers in a user's data center.
 

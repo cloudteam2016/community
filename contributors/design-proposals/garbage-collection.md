@@ -82,7 +82,7 @@ The Garbage Collector consists of a scanner, a garbage processor, and a propagat
   * Watches for create/update/delete events for all resources, enqueues the events to the *Event Queue*.
   * Worker:
     * Dequeues an item from the *Event Queue*.
-    * If the item is an creation or update, then updates the DAG accordingly.
+    * If the item is a creation or update, then updates the DAG accordingly.
       * If the object has an owner and the owner doesn’t exist in the DAG yet, then apart from adding the object to the DAG, also enqueues the object to the *Dirty Queue*.
     * If the item is a deletion, then removes the object from the DAG, and enqueues all its dependent objects to the *Dirty Queue*.
   * The propagator shouldn't need to do any RPCs, so a single worker should be sufficient. This makes locking easier.
@@ -344,7 +344,7 @@ In case the garbage collector is mistakenly deleting objects, we should provide 
 
   * A preliminary design
 
-    This is a generic design for “undoing a deletion”, not specific to undoing cascading deletion.
+    This is a generic design for "undoing a deletion", not specific to undoing cascading deletion.
     * Add a `/archive` sub-resource to every resource, it's used to store the spec of the deleted objects.
     * Before an object is deleted from the registry, the API server clears fields like DeletionTimestamp, then creates the object in /archive and sets a TTL.
     * Add a `kubectl restore` command, which takes a resource/name pair as input, creates the object with the spec stored in the /archive, and deletes the archived object.

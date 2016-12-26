@@ -33,7 +33,7 @@ So, instead, this document proposes another way to support easier deployment man
 
 ## Requirements
 
-The followings are operations we need to support for the users to easily managing deployments:
+The followings are operations we need to support the users in easily managing deployments:
 
 - **Create**: To create deployments.
 - **Rollback**: To restore to an earlier version of deployment.
